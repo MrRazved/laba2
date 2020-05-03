@@ -1,0 +1,51 @@
+#include <stdio.h>  
+#include <locale.h>
+#define size 100
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+
+	int a[size];
+	int	i, n;
+	
+	scanf_s("%d", &n); //проверка с максимальным размером
+	
+	if (n <= 0 || n > size)
+	{
+		printf("Error! Max 100");
+	}
+	else
+	{
+		for (int i = 0; i < n; i++)
+		{
+			printf("a[%d]=", i);
+			scanf_s("%d", &a[i]);
+		}
+		i = 0;
+		
+		}
+
+	int odd = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (a[i] % 2) {
+			odd = a[i];
+		}
+		else {
+			if (!odd) { printf("Error net nechetnih"); return 2; }
+			for (int j = n - 1; j > i; j--)
+				a[j + 1] = a[j];
+			a[i + 1] = odd;
+			n++;
+			i++;
+		}
+	}
+
+		printf("%s\n", "Измененный массив: ");
+		for (i = 0; i < n; i++)
+		{
+			printf("%d, ", a[i] );
+		}
+		return 0;
+}
