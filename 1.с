@@ -5,7 +5,7 @@
 void main() {
 	int a[size];
 	int n,index=0,b=0;
-	int emul=1,sum=0,max=-32767;
+	int emul=1,sum=0,max=a[0];
 	
 
 	scanf("%d", &n);
