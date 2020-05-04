@@ -5,7 +5,7 @@
 void main() {
 	int a[size];
 	int n,index=0,b=0;
-	int emul=1,sum=0,max=0;
+	int emul=1,sum=0,max=-32767;
 	
 
 	scanf("%d", &n);
@@ -52,7 +52,7 @@ void main() {
 	{
 		printf("Summa=%d", sum);
 	}
-	if (emul < 1)
+	if (emul < 0)
 	{
 		emul = emul * 2;
 		printf("composition=%d", emul);
